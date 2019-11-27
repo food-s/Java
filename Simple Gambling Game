@@ -12,13 +12,15 @@ public class Main {
         System.out.println("  If You Wrong, You Lose!");
         System.out.println("_____________________________");
         System.out.println("");
-
+        int gamble;
         Scanner sc = new Scanner(System.in);
+        int number = 0;
+      do {  
+        gamble = (int)(Math.random() * 10);
         System.out.println("Enter Your Number (0-10): ");
-        int number = sc.nextInt();
+        number = sc.nextInt();
 
-        int gamble = (int)(Math.random() * 10);
-
+      
         if (number > 10 || number < 0){
             System.err.println("Error");
         } else if (number == gamble){
@@ -28,5 +30,6 @@ public class Main {
             System.out.println("You Lose!");
             System.out.println("The Answer is " + gamble);
         }
+      } while (gamble != number);
     }
 }
